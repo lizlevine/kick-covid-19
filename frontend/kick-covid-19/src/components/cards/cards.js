@@ -11,4 +11,4 @@ import React from "react";
 
 
 
-export default card;
+export default cards;
