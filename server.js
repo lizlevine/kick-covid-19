@@ -3,7 +3,6 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const axios = require("axios");
 
-
 // Require all models
 const db = require("./");
 
@@ -18,7 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-
 // If deployed, use the deployed database. Otherwise use the local kickCovidUsers database
 const MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost/kickCovidUsers";
@@ -26,7 +24,6 @@ const MONGODB_URI =
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // require("./routes")(app);
-
 
 // localhost listening
 app.listen(PORT, function() {
