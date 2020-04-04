@@ -1,6 +1,5 @@
 // user's profile model. Arrays set up to handle multiple posts & answers to
 // same user (lines 27, 29)
-
 const mongoose = require("mongoose");
 const Post = require("post.models");
 const Answer = require("answer.models");
