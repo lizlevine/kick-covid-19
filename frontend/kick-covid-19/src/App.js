@@ -6,7 +6,6 @@ export default function App() {
     <div className="App">
       <NavBar />
 
-      <h1>Will this work?</h1>
     </div>
   );
 }
