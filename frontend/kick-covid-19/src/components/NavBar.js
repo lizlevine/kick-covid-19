@@ -51,9 +51,15 @@ function NavBar() {
         <div>
           <a
             href="#"
-            className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+            className="inline-block text-sm px-4 py-2 leading-none bg-white rounded-full text-teal-500 border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0"
           >
-            Download
+            Sign Up
+          </a>
+          <a
+            href="#"
+            className="inline-block ml-2 text-sm px-4 py-2 leading-none  bg-white rounded-full text-teal-500 border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0"
+          >
+            Login
           </a>
         </div>
       </div>
