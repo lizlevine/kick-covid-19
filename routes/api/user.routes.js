@@ -1,34 +1,19 @@
-// user's profile model. Arrays set up to handle multiple posts & answers to
-// same user (lines 27, 29)
+const router = require('express'). Router();
+const userControllers = require('../../controllers/user.controllers');
 
-const mongoose = require("mongoose");
-const Post = require("post.models");
-const Answer = require("answer.models");
+router
+  .route('/')
+  .get(userControllers.getAll)
+  .post(userControllers.create);
 
-let Schema = mongoose.Schema;
+router 
+  .route('/:id')
+  .get(userControllers.getOne)
+  .put(userControllers.updateOne)
+  .delete(userControllers.deleteOne);
 
-let UserSchema = new Schema({
-  fullName: {
-    type: String,
-    required: false
-  },
-  userName: {
-    type: String,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true
-  },
-  wantsUpdates: {
-    type: Boolean,
-    required: true
-  },
-  posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
+  
+module.exports = router;
 
-  answers: [{ type: Schema.Types.ObjectId, ref: "Answer" }]
-});
 
-let User = mongoose.model("User", UserSchema);
 
-module.exports = User;

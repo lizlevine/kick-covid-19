@@ -1,5 +1,4 @@
 // post model: line 9 setup as array for multiple answers to same post
-
 const mongoose = require("mongoose");
 
 let Schema = mongoose.Schema;

@@ -21,4 +21,4 @@ module.exports = model => ({
       const result = await model.destroy({ where: { id: req.params.id } });
       res.json(result);
     }
-  });
+});
