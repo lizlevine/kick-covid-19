@@ -36,7 +36,7 @@ const Header = () => (
             Home
           </a>
         </Link>
-        <Link to="/contact">
+        <Link to="/blog">
           <a
             href="#responsive-header"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
@@ -44,7 +44,7 @@ const Header = () => (
             Blog
           </a>
         </Link>
-        <Link to="/about">
+        <Link to="/resources">
           <a
             href="#responsive-header"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
