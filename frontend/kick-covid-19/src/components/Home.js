@@ -9,7 +9,7 @@ function Home() {
           alt="Sunset in the mountains"
         />
         <div className="px-6 py-4 bg-gray-400  ">
-          <div className="font-bold text-xl mb-2 ">The Coldest Sunset</div>
+          <div className="font-bold text-xl mb-2 ">Our Mission</div>
           <p className="text-gray-700  text-base">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Voluptatibus quia, nulla! Maiores et perferendis eaque,
@@ -24,7 +24,7 @@ function Home() {
           alt="Sunset in the mountains"
         />
         <div className="px-6 py-4 bg-gray-400 ">
-          <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
+          <div className="font-bold text-xl mb-2">Our Purpose</div>
           <p className="text-gray-700 text-base">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Voluptatibus quia, nulla! Maiores et perferendis eaque,
