@@ -6,6 +6,6 @@
 
 - Benjamin Florentino [@florentinob](https://github.com/florentinob)
 
-- Liz Levine [@lizlevine] https://github.com/lizlevine
+- Liz Levine [@lizlevine] (https://github.com/lizlevine)
 
 - Spencer Mogil [@smogil12](https://github.com/smogil12)

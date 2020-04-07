@@ -8,7 +8,12 @@ controllers.getAnswers = async (req, res) => {
     const post = await db.post.findAll({ where: { id: req.params.id } });
     const answers = await post.getAnswers();
     res.json(answers);
+   
 };
+
+controllers.getAll = async (req, res) => {
+// res.send("test received");
+}
 
 //Needs Review 
 controllers.addAnswer = async (req, res) => {
