@@ -16,6 +16,7 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(require("./routes"));
 
 // If deployed, use the deployed database. Otherwise use the local kickCovidUsers database
 const MONGODB_URI =
@@ -23,9 +24,8 @@ const MONGODB_URI =
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
-// require("./routes")(app);
 
 // localhost listening
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("App listening on http://localhost:" + PORT);
 });

@@ -2,5 +2,5 @@
 module.exports = {
   answer: require("./answer.models"),
   post: require("./post.models"),
-  user: this.require("./user.models")
+  user: require("./user.models"),
 };
