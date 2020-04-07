@@ -5,6 +5,7 @@ import Header from "./components/Header.js";
 import Home from "./components/Home.js";
 import Blog from "./components/Blog.js";
 import Resources from "./components/Resources.js";
+import Footer from "./components/Footer.js";
 
 const App = () => (
   <Router>
@@ -20,6 +21,7 @@ const App = () => (
         <Resources />
       </Route>
     </Switch>
+    <Footer />
   </Router>
 );
 export default App;
