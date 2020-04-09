@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start": "npm run start:prod",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'frontend/kick-covid-19/*'\" \"npm run client\"",
     "client": "cd frontend/kick-covid-19 && npm run start",
