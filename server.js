@@ -27,6 +27,8 @@ app.get("*", (req, res) => {
 const MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost/kickCovidUsers";
 
+  
+
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // localhost listening
