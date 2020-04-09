@@ -18,16 +18,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 app.use(require("./routes"));
-app.use(express.static(path.join(__dirname, "../build")));
+app.use(express.static(path.join(__dirname, "./frontend/kick-covid-19/build")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build"));
+  res.sendFile(path.join(__dirname, "./frontend/kick-covid-19/build"));
 });
 
 // If deployed, use the deployed database. Otherwise use the local kickCovidUsers database
 const MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost/kickCovidUsers";
-
-  
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
