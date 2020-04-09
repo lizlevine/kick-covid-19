@@ -4,8 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'frontend/kick-covid-19/*'\" \"npm run client\"",
+    "client": "cd frontend/kick-covid-19 && npm run start",
+    "install": "cd frontend/kick-covid-19 && npm install",
+    "build": "cd frontend/kick-covid-19 && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -27,6 +32,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.7.5",
+    "concurrently": "^5.1.0",
     "postcss-cli": "^7.1.0",
     "tailwindcss": "^1.2.0"
   }
