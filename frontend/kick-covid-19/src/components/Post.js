@@ -1,6 +1,6 @@
 import React from "react";
 
-const Post = () => (
+const Post = ({ body }) => (
   <div class="shadow p-4 bg-white">
     <div class="text-left">
       <h3 class="mb-2 text-gray-700">Card Title</h3>
@@ -12,14 +12,6 @@ const Post = () => (
       </p>
     </div>
     ​
-    <div class="mt-4">
-      <a href="#" class="no-underline mr-4 text-blue-500 hover:text-blue-400">
-        Link 1
-      </a>
-      <a href="#" class="no-underline mr-4 text-blue-500 hover:text-blue-400">
-        Link 2
-      </a>
-    </div>
   </div>
 );
 
