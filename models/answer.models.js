@@ -5,9 +5,19 @@ let Schema = mongoose.Schema;
 
 let AnswerSchema = new Schema({
     body: String,
-    post : { type: Schema.Types.ObjectId, ref: "Post" },
-    user_id : { type: Schema.Types.ObjectId, ref: "User" }
-});
+    post: { type: Schema.Types.ObjectId, ref: "Post" },
+    user: { type: Schema.Types.ObjectId, ref: "User" }
+}, {timestamps: true});
+
+//Needs Further Review
+/*AnswerSchema.methods.toJSONFor = function(user) {
+    return {
+        id: this._id,
+        body: this.body,
+        createdAt: this.createdAt,
+        user: this.user.toProfileJSONFor(user)
+    };
+};*/
 
 let Answer = mongoose.model("Answer", AnswerSchema);
 

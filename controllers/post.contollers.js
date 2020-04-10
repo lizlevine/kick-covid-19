@@ -1,5 +1,54 @@
 const db = require("../models");
-const crudControllers = require("../utils/crudControllers");
+
+module.exports = { 
+  findAll: async (req, res) => {
+      db.post.find(req.query)
+      .then(dbPost => res.json(dbPost))
+      .catch(err => res.status(422).json(err));
+  },
+  findById: async (req, res) => {
+      db.post.findById(req.params.id)
+      .then(dbPost => res.json(dbPost))
+      .catch(err => res.status(422).json(err));
+  },
+  create: async (req, res) => {
+      db.post.create(req.body)
+      .then(dbPost => res.json(dbPost))
+      .catch(err => res.status(422).json(err));
+  },
+  update: async (req, res) => {
+      db.post.findOneAndUpdate({ id: req.params.id }, req.body)
+      .then(dbPost => res.json(dbPost))
+      .catch(err => res.status(422).json(err));
+  },
+  remove: async (req, res) => {
+      db.post.findById(req.params.id)
+      .then(dbPost => dbPost.remove())
+      .then(dbPost => res.json(dbPost))
+      .catch(err => res.status(422).json(err));
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const crudControllers = require("../utils/crudControllers");
 
 const controllers = crudControllers(db.post);
 
@@ -23,4 +72,4 @@ controllers.addAnswer = async (req, res) => {
   res.json(result);
 };
 
-module.exports = controllers;
+module.exports = controllers;*/
