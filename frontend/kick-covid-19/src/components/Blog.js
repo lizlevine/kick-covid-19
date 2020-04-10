@@ -1,3 +1,5 @@
 import React from "react";
-const Contact = () => <h2>Blog</h2>;
+import Post from "./Post";
+
+const Contact = () => <Post />;
 export default Contact;
