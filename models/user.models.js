@@ -1,7 +1,6 @@
-// user's profile model. Arrays set up to handle multiple posts & answers to
-// same user (lines 27, 29)
 const mongoose = require("mongoose");
-const brypt = require('bcrypt');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 SALT_WORK_FACTOR = 10;
 // const Post = require("post.models");
 // const Answer = require("answer.models");
@@ -9,33 +8,41 @@ SALT_WORK_FACTOR = 10;
 let Schema = mongoose.Schema;
 
 let UserSchema = new Schema({
-  fullName: {
+  username: {
     type: String,
-    required: false
-  },
-  userName: {
-    type: String,
+    lowercase: true,
     required: true,
-    index: { unique: true }
+    unique: true,
+    index: true 
+  },
+  email: {
+    type: String,
+    match: [/\S+@\S+\.\S+/, 'is invalid'],
+    lowercase: true,
+    required: true,
+    unique: true,
+    index: true 
   },
   password: {
     type: String,
     required: true
   },
-  wantsUpdates: {
+  wantsupdates: {
     type: Boolean,
     required: true
   },
-  posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
-
-  answers: [{ type: Schema.Types.ObjectId, ref: "Answer" }]
+  posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
+  answers: [{ type: mongoose.Schema.Types.ObjectId, ref: "Answer" }]
 });
+
+var uniqueValidator = require('mongoose-unique-validator');
+UserSchema.plugin(uniqueValidator, {message: 'is already taken.'});
 
 UserSchema.pre(save, function(next) {
   var user = this;
   if (!user.isModified('password')) return next();
 
-  brypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
     if (err) return next(err);
     bcrypt.hash(user.password, salt, function (err, hash) {
       if (err) return next(err);
@@ -50,6 +57,26 @@ UserSchema.methods.comparePassword = function(candidatePassword, cb) {
     if (err) return cb(err);
     cb(null, isMatch);
   });
+};
+
+UserSchema.methods.generateJWT = function() {
+  var today = new Date();
+  var exp = new Date(today);
+  exp.setDate(today.getDate() + 60);
+
+  return jwt.sign({
+    id: this._id,
+    username: this.username,
+    exp: parseInt(exp.getTime() / 1000),
+  }, secret);
+};
+
+UserSchema.methods.toAuthJSON = function() {
+  return {
+    username: this.username,
+    email: this.email,
+    token: this.generateJWT()
+  };
 };
 
 let User = mongoose.model("User", UserSchema);
