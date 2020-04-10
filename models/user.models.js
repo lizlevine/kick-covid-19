@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 SALT_WORK_FACTOR = 10;
 // const Post = require("post.models");
 // const Answer = require("answer.models");
@@ -13,36 +13,36 @@ let UserSchema = new Schema({
     lowercase: true,
     required: true,
     unique: true,
-    index: true 
+    index: true,
   },
   email: {
     type: String,
-    match: [/\S+@\S+\.\S+/, 'is invalid'],
+    match: [/\S+@\S+\.\S+/, "is invalid"],
     lowercase: true,
     required: true,
     unique: true,
-    index: true 
+    index: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   wantsupdates: {
     type: Boolean,
-    required: true
+    required: true,
   },
   posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
-  answers: [{ type: mongoose.Schema.Types.ObjectId, ref: "Answer" }]
+  answers: [{ type: mongoose.Schema.Types.ObjectId, ref: "Answer" }],
 });
 
-var uniqueValidator = require('mongoose-unique-validator');
-UserSchema.plugin(uniqueValidator, {message: 'is already taken.'});
+var uniqueValidator = require("mongoose-unique-validator");
+UserSchema.plugin(uniqueValidator, { message: "is already taken." });
 
-UserSchema.pre(save, function(next) {
+UserSchema.pre("save", function (next) {
   var user = this;
-  if (!user.isModified('password')) return next();
+  if (!user.isModified("password")) return next();
 
-  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+  bcrypt.genSalt(SALT_WORK_FACTOR, function (err, salt) {
     if (err) return next(err);
     bcrypt.hash(user.password, salt, function (err, hash) {
       if (err) return next(err);
@@ -52,30 +52,33 @@ UserSchema.pre(save, function(next) {
   });
 });
 
-UserSchema.methods.comparePassword = function(candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+UserSchema.methods.comparePassword = function (candidatePassword, cb) {
+  bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
     if (err) return cb(err);
     cb(null, isMatch);
   });
 };
 
-UserSchema.methods.generateJWT = function() {
+UserSchema.methods.generateJWT = function () {
   var today = new Date();
   var exp = new Date(today);
   exp.setDate(today.getDate() + 60);
 
-  return jwt.sign({
-    id: this._id,
-    username: this.username,
-    exp: parseInt(exp.getTime() / 1000),
-  }, secret);
+  return jwt.sign(
+    {
+      id: this._id,
+      username: this.username,
+      exp: parseInt(exp.getTime() / 1000),
+    },
+    secret
+  );
 };
 
-UserSchema.methods.toAuthJSON = function() {
+UserSchema.methods.toAuthJSON = function () {
   return {
     username: this.username,
     email: this.email,
-    token: this.generateJWT()
+    token: this.generateJWT(),
   };
 };
 

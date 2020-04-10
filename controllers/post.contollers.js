@@ -1,52 +1,44 @@
 const db = require("../models");
 
-module.exports = { 
+module.exports = {
   findAll: async (req, res) => {
-      db.post.find(req.query)
-      .then(dbPost => res.json(dbPost))
-      .catch(err => res.status(422).json(err));
+    db.post
+      .find(req.query)
+      .then((dbPost) => res.json(dbPost))
+      .catch((err) => res.status(422).json(err));
   },
   findById: async (req, res) => {
-      db.post.findById(req.params.id)
-      .then(dbPost => res.json(dbPost))
-      .catch(err => res.status(422).json(err));
+    db.post
+      .findById(req.params.id)
+      .then((dbPost) => res.json(dbPost))
+      .catch((err) => res.status(422).json(err));
   },
   create: async (req, res) => {
-      db.post.create(req.body)
-      .then(dbPost => res.json(dbPost))
-      .catch(err => res.status(422).json(err));
+    db.post
+      .create(req.body)
+      .then((dbPost) => res.json(dbPost))
+      .catch((err) => res.status(422).json(err));
   },
   update: async (req, res) => {
-      db.post.findOneAndUpdate({ id: req.params.id }, req.body)
-      .then(dbPost => res.json(dbPost))
-      .catch(err => res.status(422).json(err));
+    db.post
+      .findOneAndUpdate({ id: req.params.id }, req.body)
+      .then((dbPost) => res.json(dbPost))
+      .catch((err) => res.status(422).json(err));
   },
   remove: async (req, res) => {
-      db.post.findById(req.params.id)
-      .then(dbPost => dbPost.remove())
-      .then(dbPost => res.json(dbPost))
-      .catch(err => res.status(422).json(err));
-  }
+    db.post
+      .findById(req.params.id)
+      .then((dbPost) => dbPost.remove())
+      .then((dbPost) => res.json(dbPost))
+      .catch((err) => res.status(422).json(err));
+  },
+  getAnswers: async (req, res) => {
+    db.post
+      .findById(req.params.id)
+      .then((dbPost) => res.json(dbPost.answers))
+      .catch((err) => res.status(422).json(err));
+  },
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*const crudControllers = require("../utils/crudControllers");
 

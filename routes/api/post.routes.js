@@ -3,20 +3,20 @@ const postControllers = require('../../controllers/post.contollers');
 
 router
     .route('/')
-    .get(postControllers.getAll)
+    .get(postControllers.findAll)
     .post(postControllers.create);
 
 router 
     .route('/:id')
-    .get(postControllers.getOne)
-    .put(postControllers.updateOne)
-    .delete(postControllers.deleteOne);
+    .get(postControllers.findById)
+    .put(postControllers.update)
+    .delete(postControllers.remove);
 
 //Needs Review
 router
     .route('/:id/answers')
     .get(postControllers.getAnswers)
-    .post(postControllers.addAnswer);
+    // .post(postControllers.addAnswer);
 
 
 module.exports = router;
