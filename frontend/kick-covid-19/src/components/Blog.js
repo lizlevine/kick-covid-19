@@ -9,16 +9,21 @@ class Blog extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await axios.get("/api/posts");
-    const { data: posts } = response;
-    this.setState({ posts });
+    const response = await axios.get("/api/posts").then((response) => {
+      console.log(response);
+      this.setState((state) => {
+        return { posts: state.posts.concat(response.data) };
+      });
+    });
+    // const { data: posts } = response;
+    // this.setState({ posts });
   }
 
   render() {
     return (
       <div className="row">
-        {this.state.posts.map(({ body }) => (
-          <Post body={body} />
+        {this.state.posts.map((body, id) => (
+          <Post body={body} key={id} />
         ))}
       </div>
     );
