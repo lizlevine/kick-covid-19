@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Post from "../components/Post";
+import { Link } from "react-router-dom";
 
 class Blog extends React.Component {
   constructor(props) {
@@ -20,10 +21,15 @@ class Blog extends React.Component {
   }
 
   render() {
+    console.log(
+      `[DEBUG] this.state.posts = ${JSON.stringify(this.state.posts, null, 2)}`
+    );
     return (
       <div className="row">
-        {this.state.posts.map((body, id) => (
-          <Post body={body} key={id} />
+        {this.state.posts.map(({ _id, body, answers }) => (
+          <Link key={_id} to={`/posts/${_id}`}>
+            <Post body={body} />
+          </Link>
         ))}
       </div>
     );
