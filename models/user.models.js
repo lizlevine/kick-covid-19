@@ -66,11 +66,11 @@ UserSchema.methods.generateJWT = function () {
 
   return jwt.sign(
     {
-      id: this._id,
+      id: this.id,
       username: this.username,
-      exp: parseInt(exp.getTime() / 1000),
+      exp: parseInt(exp.getTime() / 1000)
     },
-    secret
+    process.env.JWT_SECRET
   );
 };
 
@@ -78,7 +78,7 @@ UserSchema.methods.toAuthJSON = function () {
   return {
     username: this.username,
     email: this.email,
-    token: this.generateJWT(),
+    token: this.generateJWT()
   };
 };
 
