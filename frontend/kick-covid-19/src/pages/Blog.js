@@ -23,7 +23,7 @@ class Blog extends React.Component {
   render() {
     return (
       <div className="row">
-        {this.state.posts.map((posts, body, id) => (
+        {this.state.posts.map((body, posts, id) => (
           <Link key={posts.id} to={`/posts/${posts.id}`}>
             <Post body={body} key={id} />
             <pre>{JSON.stringify(posts.body, null, 2)}</pre>
