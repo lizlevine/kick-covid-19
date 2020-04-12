@@ -29,7 +29,6 @@ class Blog extends React.Component {
         {this.state.posts.map(({ _id, body, answers }) => (
           <Link key={_id} to={`/posts/${_id}`}>
             <Post body={body} />
-            <pre>{JSON.stringify(posts.body, null, 2)}</pre>
           </Link>
         ))}
       </div>
