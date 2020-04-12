@@ -21,11 +21,14 @@ class Blog extends React.Component {
   }
 
   render() {
+    console.log(
+      `[DEBUG] this.state.posts = ${JSON.stringify(this.state.posts, null, 2)}`
+    );
     return (
       <div className="row">
-        {this.state.posts.map((body, posts, id) => (
-          <Link key={posts.id} to={`/posts/${posts.id}`}>
-            <Post body={body} key={id} />
+        {this.state.posts.map(({ _id, body, answers }) => (
+          <Link key={_id} to={`/posts/${_id}`}>
+            <Post body={body} />
             <pre>{JSON.stringify(posts.body, null, 2)}</pre>
           </Link>
         ))}
