@@ -7,6 +7,7 @@ function handleAuthErrors(err, req, res, next) {
      next(err);
 }
 
+
 module.exports = {
      handleErrors: handleAuthErrors,
      required: jwtMiddleware({
