@@ -7,6 +7,7 @@ import Blog from "./pages/Blog.js";
 import Resources from "./pages/Resources.js";
 import Footer from "./components/Footer.js";
 import Posts from "./pages/Posts.js";
+import Login from "./pages/Login.js";
 
 const App = () => (
   <Router>
@@ -23,6 +24,9 @@ const App = () => (
       </Route>
       <Route exact path="/resources">
         <Resources />
+      </Route>
+      <Route exact path="/login">
+        <Login />
       </Route>
     </Switch>
     <Footer />
