@@ -1,39 +1,33 @@
 import React from "react";
 import axios from "axios";
 import Post from "../components/Post";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class Posts extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { posts: [] };
+    this.state = { post: null };
   }
 
-  async componentDidMount() {
-    const response = await axios.get("/api/posts/:id").then((response) => {
+  componentDidMount() {
+    axios.get(`/api/posts/${this.props.match.params.id}`).then((response) => {
       console.log(response);
-      this.setState((state) => {
-        return { posts: state.posts.concat(response.data) };
-      });
+      this.setState({ post: response.data });
     });
-    // const { data: posts } = response;
-    // this.setState({ posts });
   }
 
   render() {
-    console.log(
-      `[DEBUG] this.state.posts = ${JSON.stringify(this.state.posts, null, 2)}`
-    );
+    console.log(`[DEBUG] this.props = ${JSON.stringify(this.props, null, 2)}`);
     return (
       <div className="row">
-        {this.state.posts.map(({ _id, body, answers }) => (
-          <Link key={_id} to={`/posts/${_id}`}>
-            <Post body={body} />
-          </Link>
-        ))}
+        {this.state.post ? (
+          <Post body={this.state.post.body} />
+        ) : (
+          <h3>loading...</h3>
+        )}
       </div>
     );
   }
 }
 
-export default Posts;
+export default withRouter(Posts);
