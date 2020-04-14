@@ -8,7 +8,7 @@ require("dotenv").config();
 const auth = require("./utils/auth");
 
 // Require all models
-const db = require("./");
+const db = require("./models");
 
 const PORT = process.env.PORT || 3030;
 
@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 app.use(require("./routes"));
+app.use(auth.handleErrors);
 app.use(express.static(path.join(__dirname, "./frontend/kick-covid-19/build")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./frontend/kick-covid-19/build"));
