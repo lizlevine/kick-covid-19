@@ -1,10 +1,33 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import axios from "axios";
+import Post from "../components/Post";
+import { withRouter } from "react-router-dom";
 
-function Posts() {
-  const { id } = useParams();
+class Posts extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { post: null };
+  }
 
-  return <h1>Post {id}</h1>;
+  componentDidMount() {
+    axios.get(`/api/posts/${this.props.match.params.id}`).then((response) => {
+      console.log(response);
+      this.setState({ post: response.data });
+    });
+  }
+
+  render() {
+    console.log(`[DEBUG] this.props = ${JSON.stringify(this.props, null, 2)}`);
+    return (
+      <div className="row">
+        {this.state.post ? (
+          <Post body={this.state.post.body} />
+        ) : (
+          <h3>loading...</h3>
+        )}
+      </div>
+    );
+  }
 }
 
-export default Posts;
+export default withRouter(Posts);
