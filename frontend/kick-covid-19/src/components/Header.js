@@ -60,12 +60,14 @@ const Header = () => (
         >
           Sign Up
         </a>
-        <a
-          href="#"
-          className="inline-block ml-2 text-sm px-4 py-2 leading-none  bg-white rounded-full text-teal-500 border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0"
-        >
-          Login
-        </a>
+        <Link to="/login">
+          <a
+            href="#"
+            className="inline-block ml-2 text-sm px-4 py-2 leading-none  bg-white rounded-full text-teal-500 border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0"
+          >
+            Login
+          </a>
+        </Link>
       </div>
     </div>
   </nav>
