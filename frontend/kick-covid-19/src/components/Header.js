@@ -54,12 +54,14 @@ const Header = () => (
         </Link>
       </div>
       <div>
-        <a
-          href="#"
-          className="inline-block text-sm px-4 py-2 leading-none bg-white rounded-full text-teal-500 border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0"
-        >
-          Sign Up
-        </a>
+        <Link to="/signup">
+          <a
+            href="#"
+            className="inline-block text-sm px-4 py-2 leading-none bg-white rounded-full text-teal-500 border-white hover:border-transparent hover:text-gray-500 hover:bg-white mt-4 lg:mt-0"
+          >
+            Sign Up
+          </a>
+        </Link>
         <Link to="/login">
           <a
             href="#"
