@@ -23,12 +23,21 @@ class Blog extends React.Component {
       `[DEBUG] this.state.posts = ${JSON.stringify(this.state.posts, null, 2)}`
     );
     return (
-      <div className="row">
-        {this.state.posts.map(({ _id, body, answers }) => (
-          <Link key={_id} to={`/posts/${_id}`}>
-            <Post body={body} />
+      <div className="maindiv">
+        <div className="buttons flex justify-center">
+          <Link to="/newpost">
+            <button className="mb-3 mt-3 flex items-center  rounded-full shadow bg-teal-500 px-4 py-2 text-white hover:bg-teal-400">
+              Make a Post
+            </button>
           </Link>
-        ))}
+        </div>
+        <div className="row ">
+          {this.state.posts.map(({ _id, body, answers }) => (
+            <Link key={_id} to={`/posts/${_id}`}>
+              <Post body={body} />
+            </Link>
+          ))}
+        </div>
       </div>
     );
   }
