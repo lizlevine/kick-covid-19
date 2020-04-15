@@ -25,9 +25,11 @@ class Blog extends React.Component {
     return (
       <div className="maindiv">
         <div className="buttons flex justify-center">
-          <button className="mb-3 mt-3 flex items-center  rounded-full shadow bg-teal-500 px-4 py-2 text-white hover:bg-blue-400">
-            Make a Post
-          </button>
+          <Link to="/newpost">
+            <button className="mb-3 mt-3 flex items-center  rounded-full shadow bg-teal-500 px-4 py-2 text-white hover:bg-teal-400">
+              Make a Post
+            </button>
+          </Link>
         </div>
         <div className="row ">
           {this.state.posts.map(({ _id, body, answers }) => (

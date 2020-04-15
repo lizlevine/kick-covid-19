@@ -8,6 +8,7 @@ import Resources from "./pages/Resources.js";
 import Footer from "./components/Footer.js";
 import Posts from "./pages/Posts.js";
 import Login from "./pages/Login.js";
+import NewPost from "./pages/NewPost.js";
 
 const App = () => (
   <Router>
@@ -27,6 +28,9 @@ const App = () => (
       </Route>
       <Route exact path="/login">
         <Login />
+      </Route>
+      <Route exact path="/newpost">
+        <NewPost />
       </Route>
     </Switch>
     <Footer />
