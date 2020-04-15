@@ -10,7 +10,7 @@ const auth = require("./utils/auth");
 // Require all models
 const db = require("./models");
 
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3032;
 
 // Initialize Express
 const app = express();
