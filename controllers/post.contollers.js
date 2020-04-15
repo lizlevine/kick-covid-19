@@ -21,7 +21,7 @@ module.exports = {
   },
   update: async (req, res) => {
     db.post
-      .findOneAndUpdate({ id: req.params.id }, req.body)
+      .findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
       .then((dbPost) => res.json(dbPost))
       .catch((err) => res.status(422).json(err));
   },
