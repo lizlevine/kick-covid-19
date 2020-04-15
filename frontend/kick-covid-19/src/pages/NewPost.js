@@ -31,20 +31,22 @@ class NewPost extends React.Component {
     const { body } = this.state;
 
     return (
-      <div className="col-12 col-lg-6 offset-lg-3">
-        <textarea
-          onChange={(ev) => this.handleChangeField("body", ev)}
-          className="form-control my-3"
-          placeholder="Article Body"
-          value={body}
-        ></textarea>
+      <div className="maindiv">
+        <div className="flex justify-center">
+          <textarea
+            onChange={(ev) => this.handleChangeField("body", ev)}
+            className="border-b border-b-2 mt-3 border-teal-500"
+            placeholder="Covid Post"
+            value={body}
+          ></textarea>
 
-        <button
-          onClick={this.handleSubmit}
-          className="btn btn-primary float-right"
-        >
-          Submit
-        </button>
+          <button
+            onClick={this.handleSubmit}
+            className="mb-3 ml-3 mt-3 rounded-full shadow bg-teal-500 px-4 py-2 text-white hover:bg-teal-400"
+          >
+            Submit
+          </button>
+        </div>
       </div>
     );
   }
