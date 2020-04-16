@@ -4,11 +4,14 @@ form {
 }
 
 button {
-  background-color: #8064a2;
   border: 2px solid silver;
   margin-top: 20px;
 }
 
 button:hover {
   transform: scale(1.09);
+}
+
+input {
+  cursor: pointer;
 }
