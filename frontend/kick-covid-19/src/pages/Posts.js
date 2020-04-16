@@ -22,7 +22,7 @@ class Posts extends React.Component {
     const { body } = this.state;
     console.log("fired submit");
     return axios.post("/api/answers", {
-      body: "hopefully by summer",
+      body: "no one knows!",
       post: "5e965b1ea3f63120cbca6881",
     });
     // .then((res) => {
