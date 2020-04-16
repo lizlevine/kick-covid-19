@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function Footer() {
   return (
     // added fixed footer with below code. If blog ends up scrolling weird remove//
-    <div class="fixed inset-x-0 bottom-0">
+    <div class=" inset-x-0 bottom-0">
       <div className="bg-gray-200 mt-8">
         <div className="max-w-screen-xl mx-auto py-8 px-4 overflow-hidden sm:px-6 lg:px-8">
           <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
