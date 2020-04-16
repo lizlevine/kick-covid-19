@@ -22,7 +22,7 @@ module.exports = {
   update: async (req, res) => {
     console.log(req.body);
     db.user
-      .findByIdAndUpdate(req.params.id, req.body, { new: true, upsert: true })
+      .findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
       .then((dbUser) => res.json(dbUser))
       .catch((err) => res.status(422).json(err));
   },
