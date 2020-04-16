@@ -22,8 +22,8 @@ class Posts extends React.Component {
     const { body } = this.state;
     console.log("fired submit");
     return axios.post("/api/answers", {
-      body: "test",
-      post: "5e96577aa3f63120cbca687e",
+      body: "hopefully by summer",
+      post: "5e965b1ea3f63120cbca6881",
     });
     // .then((res) => {
     //   console.log(res);
