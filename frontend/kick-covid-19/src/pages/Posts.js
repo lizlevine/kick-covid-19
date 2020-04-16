@@ -22,13 +22,19 @@ class Posts extends React.Component {
     const { body } = this.state;
     console.log("fired submit");
     return axios.post("/api/answers", {
-      body: "id test",
+      body: this.state.body,
       post: this.state.post._id,
     });
     // .then((res) => {
     //   console.log(res);
     //   return <Redirect to="/blog" push={true} />;
     // });
+  }
+
+  handleChangeField(key, event) {
+    this.setState({
+      [key]: event.target.value,
+    });
   }
 
   render() {
@@ -52,6 +58,7 @@ class Posts extends React.Component {
         <div className="row"></div>
         <div className="flex justify-center">
           <textarea
+            onChange={(ev) => this.handleChangeField("body", ev)}
             className="border-b border-b-2 mt-3 border-teal-500"
             placeholder="Post Your Reply"
             value={this.state.body}
