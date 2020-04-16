@@ -10,6 +10,7 @@ module.exports = {
   findById: async (req, res) => {
     db.post
       .findById(req.params.id)
+      .populate("answers")
       .then((dbPost) => res.json(dbPost))
       .catch((err) => res.status(422).json(err));
   },

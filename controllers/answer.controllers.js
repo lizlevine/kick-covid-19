@@ -14,10 +14,16 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   create: async (req, res) => {
-    db.answer
-      .create(req.body)
-      .then((dbAnswer) => res.json(dbAnswer))
-      .catch((err) => res.status(422).json(err));
+    // TODO(liz): wrap db lookups in try-catch blocks to handle db errors
+    const { post } = req.body;
+    const dbPost = await db.post.findById(post);
+    // TODO(liz): if the post doesn't exit throw and err
+
+    const dbAnswer = await db.answer.create(req.body);
+    // TODO(liz): if db answer does not exist, throw and error
+    dbPost.answers.push(dbAnswer._id);
+    await dbPost.save();
+    res.status(201).json(dbAnswer);
   },
   update: async (req, res) => {
     db.answer
