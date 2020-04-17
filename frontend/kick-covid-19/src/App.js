@@ -1,5 +1,6 @@
 import React from "react";
 
+//import { useAuth } from './context/auth.context';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "./components/Header.js";
 import Home from "./pages/Home.js";

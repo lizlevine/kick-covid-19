@@ -1,7 +1,7 @@
 var db = require("../models");
 
 const me = async (req, res) => {
-  const user = await db.user.findOne({ $where: { id: req.auth.user.id } });
+  const user = await db.user.findOne({ id: req.auth.user.id } );
   res.send({ user });
 };
 
