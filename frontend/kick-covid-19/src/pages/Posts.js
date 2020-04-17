@@ -51,12 +51,13 @@ class Posts extends React.Component {
   render() {
     console.log(`[DEBUG] this.props = ${JSON.stringify(this.props, null, 2)}`);
     return (
-      <div className="container">
+      <div className="containertest">
         <div className="row">
           {this.state.post ? (
             <React.Fragment>
               {" "}
               <Post body={this.state.post.body} />
+              <h1 className="mt-4 font-bold">Answers</h1>
               {this.state.post &&
                 this.state.post.answers.map((answer) => (
                   <Post body={answer.body} />
