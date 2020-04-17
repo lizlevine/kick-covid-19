@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 class NewPost extends React.Component {
   constructor(props) {
@@ -17,13 +17,15 @@ class NewPost extends React.Component {
   handleSubmit() {
     const { body } = this.state;
     console.log("fired submit");
-    return axios.post("/api/posts", {
-      body,
-    });
-    // .then((res) => {
-    //   console.log(res);
-    //   return <Redirect to="/blog" push={true} />;
-    // });
+    return axios
+      .post("/api/posts", {
+        body,
+      })
+      .then((res) => {
+        console.log(res);
+        window.location.href = "/blog";
+        // return <Redirect to="/blog" push={true} />;
+      });
   }
 
   handleChangeField(key, event) {
