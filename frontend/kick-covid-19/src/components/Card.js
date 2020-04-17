@@ -14,8 +14,7 @@ const Card = () => (
         <p className="text-gray-700 text-base">
           To provide an open-source platform for those effected by the Covid-19
           pandemic to share their experience and contribute to others. An
-          opportunity to have a say in shaping a new world based on connectivity
-          and community.
+          opportunity to have a say in shaping our new world.
         </p>
       </div>
     </div>
@@ -31,7 +30,7 @@ const Card = () => (
         <p className="text-gray-700  text-base">
           To deliver the facts based on science and data. To provide a forum for
           all citizens, especially our steadfast health workers and first
-          responders to share and participate, to hear and be heard.
+          responders. To share and participate - to hear and be heard.
         </p>
       </div>
     </div>
