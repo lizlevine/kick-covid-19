@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Post from "../components/Post";
 import { withRouter } from "react-router-dom";
+import Answer from "../components/Answer";
 
 class Posts extends React.Component {
   constructor(props) {
@@ -16,19 +17,30 @@ class Posts extends React.Component {
       console.log(response);
       this.setState({ post: response.data });
     });
+    this.getPost();
   }
 
   handleSubmit() {
     const { body } = this.state;
     console.log("fired submit");
-    return axios.post("/api/answers", {
-      body: this.state.body,
-      post: this.state.post._id,
+    return axios
+      .post("/api/answers", {
+        body: this.state.body,
+        post: this.state.post._id,
+      })
+      .then((res) => {
+        this.getPost();
+      })
+      .catch((err) => {
+        // deal with the error
+      });
+  }
+
+  getPost() {
+    axios.get(`/api/posts/${this.props.match.params.id}`).then((response) => {
+      console.log(response);
+      this.setState({ post: response.data });
     });
-    // .then((res) => {
-    //   console.log(res);
-    //   return <Redirect to="/blog" push={true} />;
-    // });
   }
 
   handleChangeField(key, event) {
@@ -40,15 +52,16 @@ class Posts extends React.Component {
   render() {
     console.log(`[DEBUG] this.props = ${JSON.stringify(this.props, null, 2)}`);
     return (
-      <div className="container">
+      <div className="containertest">
         <div className="row">
           {this.state.post ? (
             <React.Fragment>
               {" "}
               <Post body={this.state.post.body} />
+              <h1 className="mt-4 font-bold">Answers</h1>
               {this.state.post &&
                 this.state.post.answers.map((answer) => (
-                  <Post body={answer.body} />
+                  <Answer body={answer.body} />
                 ))}{" "}
             </React.Fragment>
           ) : (
