@@ -10,12 +10,17 @@ const login = async (req, res) => {
   const user = await db.user.find(null).findOne({
     where: { email: enteredEmail },
   });
+  const password = await db.user.find(null).findOne({
+    where: { password: enteredPassword },
+  });
 
-  if (!user) return res.status(404).json({ message: "User not found" });
+  if (!user, !password) return res.status(404).json({ message: "Invalid Credentials" });
 
-  const isPasswordCorrect = await user.checkPassword(enteredPassword);
+  /*const password = await db.user.find(null).findOne({
+    where: { password: enteredPassword },
+  });
   if (!isPasswordCorrect)
-    return res.status(400).json({ message: "Incorrect password" });
+    return res.status(400).json({ message: "Incorrect password" });*/
 
   return res.json({ token: user.generateJWT(), user });
 };

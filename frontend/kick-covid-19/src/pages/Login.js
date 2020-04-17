@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 
+//import { useAuth } from '../context/auth.context';
+
 function Login() {
   return (
     <form className="w-full max-w-sm">

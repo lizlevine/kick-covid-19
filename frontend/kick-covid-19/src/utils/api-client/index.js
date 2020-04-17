@@ -5,6 +5,4 @@ axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem(
 
 export default {
     auth: require('./auth.client')(axios),
-    posts: require('./post.client')(axios),
-    answers: require('./answer.client')(axios),
 };
