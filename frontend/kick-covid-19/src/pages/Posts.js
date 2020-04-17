@@ -29,6 +29,9 @@ class Posts extends React.Component {
         post: this.state.post._id,
       })
       .then((res) => {
+        this.setState(() => {
+          return { body: "" };
+        });
         this.getPost();
       })
       .catch((err) => {
@@ -61,7 +64,7 @@ class Posts extends React.Component {
               <h1 className="mt-4 font-bold">Answers</h1>
               {this.state.post &&
                 this.state.post.answers.map((answer) => (
-                  <Answer body={answer.body} />
+                  <Answer user={answer.user} body={answer.body} />
                 ))}{" "}
             </React.Fragment>
           ) : (

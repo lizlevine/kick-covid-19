@@ -32,9 +32,9 @@ class Blog extends React.Component {
           </Link>
         </div>
         <div className="row ">
-          {this.state.posts.map(({ _id, body, answers }) => (
+          {this.state.posts.map(({ _id, body, user_id, answers }) => (
             <Link key={_id} to={`/posts/${_id}`}>
-              <Post body={body} />
+              <Post body={body} user_id={user_id} />
             </Link>
           ))}
         </div>
