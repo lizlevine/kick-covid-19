@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Post from "../components/Post";
 import { withRouter } from "react-router-dom";
+import Answer from "../components/Answer";
 
 class Posts extends React.Component {
   constructor(props) {
@@ -60,7 +61,7 @@ class Posts extends React.Component {
               <h1 className="mt-4 font-bold">Answers</h1>
               {this.state.post &&
                 this.state.post.answers.map((answer) => (
-                  <Post body={answer.body} />
+                  <Answer body={answer.body} />
                 ))}{" "}
             </React.Fragment>
           ) : (
