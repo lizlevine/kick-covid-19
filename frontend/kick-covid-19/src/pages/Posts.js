@@ -29,6 +29,9 @@ class Posts extends React.Component {
         post: this.state.post._id,
       })
       .then((res) => {
+        this.setState(() => {
+          return { body: "" };
+        });
         this.getPost();
       })
       .catch((err) => {
