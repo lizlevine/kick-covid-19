@@ -17,10 +17,10 @@ module.exports = {
     // TODO(liz): wrap db lookups in try-catch blocks to handle db errors
     const { post } = req.body;
     const dbPost = await db.post.findById(post);
-    // TODO(liz): if the post doesn't exit throw and err
+    // TODO(liz): if the post doesn't exit throw an err
 
     const dbAnswer = await db.answer.create(req.body);
-    // TODO(liz): if db answer does not exist, throw and error
+    // TODO(liz): if db answer does not exist, throw an error
     dbPost.answers.push(dbAnswer._id);
     await dbPost.save();
     res.status(201).json(dbAnswer);
