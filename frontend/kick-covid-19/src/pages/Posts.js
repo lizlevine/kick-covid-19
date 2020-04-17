@@ -16,19 +16,30 @@ class Posts extends React.Component {
       console.log(response);
       this.setState({ post: response.data });
     });
+    this.getPost();
   }
 
   handleSubmit() {
     const { body } = this.state;
     console.log("fired submit");
-    return axios.post("/api/answers", {
-      body: this.state.body,
-      post: this.state.post._id,
+    return axios
+      .post("/api/answers", {
+        body: this.state.body,
+        post: this.state.post._id,
+      })
+      .then((res) => {
+        this.getPost();
+      })
+      .catch((err) => {
+        // deal with the error
+      });
+  }
+
+  getPost() {
+    axios.get(`/api/posts/${this.props.match.params.id}`).then((response) => {
+      console.log(response);
+      this.setState({ post: response.data });
     });
-    // .then((res) => {
-    //   console.log(res);
-    //   return <Redirect to="/blog" push={true} />;
-    // });
   }
 
   handleChangeField(key, event) {
