@@ -1,9 +1,20 @@
 import React from "react";
+import { useFormik } from 'formik';
 import "./style.css";
 
-//import { useAuth } from '../context/auth.context';
+import { useAuth } from '../context/auth.context';
 
 function Login() {
+  const {login} = useAuth();
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    onSubmit: async ({ email, password }) => {
+      login({ email, password });
+    },
+  }); 
   return (
     <form className="w-full max-w-sm">
       <div className="md:flex md:items-center mb-6">
@@ -18,9 +29,11 @@ function Login() {
         <div className="md:w-2/3">
           <input
             className="bg-gray-200 appearance-none border-2 border-gray-300 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-400"
-            id="inline-username"
-            type="text"
-            placeholder=""
+            id="email"
+            name="email"
+            type="email"
+            onChange={formik.handleChange}
+            value={formik.values.email}
           />
         </div>
       </div>
@@ -37,8 +50,11 @@ function Login() {
         <div className="md:w-2/3">
           <input
             className="bg-gray-200 appearance-none border-2 border-gray-400 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-400"
-            id="inline-username"
+            id="password"
+            name="password"
             type="password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
             placeholder=""
           />
         </div>
