@@ -1,7 +1,25 @@
 import React from "react";
 
 const Card = () => (
-  <div className="flex justify-center mt-8 mb-4 ">
+  // <div className="flex justify-center mt-8 mb-4 ">
+  <div className="flex justify-around mt-8 mb-4">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg ml-8">
+      <img
+        className="w-full h-48"
+        src="https://img.freepik.com/free-photo/group-people-five-persons-using-their-fingers-make-star-shape-with-blue-sky_35818-93.jpg?size=626&ext=jpg"
+        alt="teamwork"
+      />
+      <div className="px-6 py-4 bg-gray-400 ">
+        <div className="font-bold text-xl mb-2">Our Vision</div>
+        <p className="text-gray-700 text-base">
+          To provide an open-source platform for those effected by the Covid-19
+          pandemic to share their experience and contribute to others. An
+          opportunity to have a say in shaping a new world based on connectivity
+          and community.
+        </p>
+      </div>
+    </div>
+
     <div className="max-w-sm  rounded overflow-hidden shadow-lg">
       <img
         className="w-full h-48"
@@ -11,12 +29,13 @@ const Card = () => (
       <div className="px-6 py-4 bg-gray-400  ">
         <div className="font-bold text-xl mb-2 ">Our Mission</div>
         <p className="text-gray-700  text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-          quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-          nihil.
+          To deliver the facts based on science and data. To provide a forum for
+          all citizens, especially our steadfast health workers and first
+          responders to share and participate, to hear and be heard.
         </p>
       </div>
     </div>
+
     <div className="max-w-sm rounded overflow-hidden shadow-lg ml-8">
       <img
         className="w-full h-48"
@@ -24,11 +43,14 @@ const Card = () => (
         alt="Sunset in the mountains"
       />
       <div className="px-6 py-4 bg-gray-400 ">
-        <div className="font-bold text-xl mb-2">Our Purpose</div>
+        <div className="font-bold text-xl mb-2">Our Values</div>
         <p className="text-gray-700 text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-          quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-          nihil.
+          <ul>
+            <li>• Community</li>
+            <li>• Connection</li>
+            <li>• Contribution</li>
+            <li>• Integrity</li>
+          </ul>
         </p>
       </div>
     </div>
