@@ -7,17 +7,11 @@ const me = async (req, res) => {
 
 const login = async (req, res) => {
   const { email: enteredEmail, password: enteredPassword } = req.body;
-  const user = await db.user.find(null).findOne({
-    where: { email: enteredEmail },
-  });
-
-  if (!user) return res.status(404).json({ message: "User not found" });
-
-  const isPasswordCorrect = await user.checkPassword(enteredPassword);
-  if (!isPasswordCorrect)
-    return res.status(400).json({ message: "Incorrect password" });
-
-  return res.json({ token: user.generateJWT(), user });
+  const user = await db.user.findOne({ email: enteredEmail });
+  if (!user) return res.status(404).json({ message: "Invalid Email"});
+  const isValidPassword = await user.comparePassword(enteredPassword)
+  if (!isValidPassword) return res.status(400).json({ message: "Invalid Password"});
+    return res.json({user: user.toAuthJSON()});
 };
 
 module.exports = {
