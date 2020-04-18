@@ -60,8 +60,10 @@ const Team = () => (
                   Liz Levine
                 </h3>
                 <p class="mt-3 text-base leading-6 text-gray-500">
-                  Liz is a Web Developer with a passion with making impossible
-                  Apps for projects. She is a AKC Champion Dog Mom.
+                  Liz is a Web Developer with a passion for dreaming up
+                  impossible apps. She's also the managing director for a
+                  corporate training & consulting company in NYC and, the proud
+                  mom of an AKC Champion Basenji.
                 </p>
               </a>
             </div>
