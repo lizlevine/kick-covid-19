@@ -1,3 +1,10 @@
 import React from "react";
-const About = () => <h2>Resources</h2>;
-export default About;
+import Faq from "../components/Faq";
+function Resources() {
+  return (
+    <div className="Spencer">
+      <Faq />
+    </div>
+  );
+}
+export default Resources;
