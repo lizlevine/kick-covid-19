@@ -13,6 +13,7 @@ import SignUp from "./pages/SignUp.js";
 import NewPost from "./pages/NewPost.js";
 import "./assets/main.css";
 import "./App.css";
+import About from "./pages/About";
 
 const App = () => (
   <Router>
@@ -40,6 +41,9 @@ const App = () => (
         </Route>
         <Route exact path="/newpost">
           <NewPost />
+        </Route>
+        <Route exact path="/about">
+          <About />
         </Route>
       </Switch>
     </div>
