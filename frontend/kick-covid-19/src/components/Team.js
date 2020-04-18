@@ -31,9 +31,10 @@ const Team = () => (
                   Spencer Mogil
                 </h3>
                 <p class="mt-3 text-base leading-6 text-gray-500">
-                  Group project that utilizes HTML, CSS Javascript, jQuery,
-                  Bulma, Axios, and PetFinder's API to match adoptable dogs to
-                  people based on a user input form
+                  Spencer is a part time-developer and part time Technical
+                  Account Manager at a SaaS company. In his free time he enjoys
+                  watching the Jets lose, playing Call of Duty, and playing
+                  around with Front-End code.
                 </p>
               </a>
             </div>
@@ -59,9 +60,8 @@ const Team = () => (
                   Liz Levine
                 </h3>
                 <p class="mt-3 text-base leading-6 text-gray-500">
-                  Project that uses HTML, CSS Javascript, jQuery, Ajax, and
-                  Gifphy's API. Pre-made buttons are appended with a for loop
-                  through JS and added user input functionality
+                  Liz is a Web Developer with a passion with making impossible
+                  Apps for projects. She is a AKC Champion Dog Mom.
                 </p>
               </a>
             </div>
@@ -86,9 +86,8 @@ const Team = () => (
                   Ben Florentino
                 </h3>
                 <p class="mt-3 text-base leading-6 text-gray-500">
-                  Full Stack Web Application that uses Node.js, jQuery, AJAX,
-                  Express and Bootstrap. Through completing survey, user is
-                  matched with a character from The Sopranos with logic from JS
+                  Ben is a part-time Full-Stack Develper, world renowned Twitch
+                  Streamer, and Coordinator for Window Treatment Installation.
                 </p>
               </a>
             </div>
