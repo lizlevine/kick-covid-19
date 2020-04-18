@@ -12,6 +12,9 @@ button:hover {
   transform: scale(1.09);
 }
 
+/* a:hover {
+  transform: scale(1.08);
+} */
 
 input {
   cursor: pointer;
