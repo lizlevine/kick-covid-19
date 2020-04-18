@@ -22,12 +22,19 @@ class Posts extends React.Component {
 
   handleSubmit() {
     const { body } = this.state;
+    const token = localStorage.getItem("__kickcovid19_token");
     console.log("fired submit");
-    return axios
-      .post("/api/answers", {
+    return axios({
+      method: "post",
+      url: "/api/answers",
+      data: {
         body: this.state.body,
         post: this.state.post._id,
-      })
+      },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
       .then((res) => {
         this.setState(() => {
           return { body: "" };

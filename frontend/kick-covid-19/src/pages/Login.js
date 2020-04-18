@@ -1,23 +1,20 @@
 import React from "react";
-import { useFormik } from 'formik';
+import { useFormik } from "formik";
 import "./style.css";
 
-frontend-auth-work
-import { useAuth } from '../context/auth.context';
-=======
-
+import { useAuth } from "../context/auth.context";
 
 function Login() {
-  const {login} = useAuth();
+  const { login } = useAuth();
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     onSubmit: async ({ email, password }) => {
       login({ email, password });
     },
-  }); 
+  });
   return (
     <form className="w-full max-w-sm">
       <div className="md:flex md:items-center mb-6">
