@@ -31,7 +31,7 @@ const Faq = () => (
             <div class="mt-12">
               <dt class="text-lg leading-6 font-medium text-gray-900">
                 What to do if you are stressed out due to the prevelance of
-                Covid-19 in New York?
+                COVID-19 in New York?
               </dt>
               <dd class="mt-2">
                 <p class="text-base leading-6 text-gray-500">
@@ -75,30 +75,45 @@ const Faq = () => (
           <div class="mt-12 md:mt-0">
             <div>
               <dt class="text-lg leading-6 font-medium text-gray-900">
-                What is the least spoken language in the world?
+                If you think that you have COVID-19
               </dt>
               <dd class="mt-2">
                 <p class="text-base leading-6 text-gray-500">
-                  Sign language. Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Quas cupiditate laboriosam fugiat.
+                  New testing facilities are opening.{" "}
+                  <a
+                    class="text-purple-500 hover:text-blue-800"
+                    href="https://www.governor.ny.gov/news/amid-ongoing-covid-19-pandemic-governor-cuomo-announces-five-new-covid-19-testing-facilities"
+                  >
+                    Find testing site locations and hours or operation.
+                  </a>{" "}
+                  Testing is free for all eligible New Yorkers as ordered by a
+                  health care provider
                 </p>
               </dd>
             </div>
             <div class="mt-12">
               <dt class="text-lg leading-6 font-medium text-gray-900">
-                Why can't you hear a pterodactyl go to the bathroom?
+                How to sell products to NYS due to shortages of gloves, masks,
+                and gowns
               </dt>
               <dd class="mt-2">
                 <p class="text-base leading-6 text-gray-500">
-                  Because the pee is silent. Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Quas cupiditate laboriosam
-                  fugiat.
+                  There is a shortage of personal protective equipment. The
+                  Governor is asking providers to sell these products to the
+                  state within this{" "}
+                  <a
+                    class="text-purple-500 hover:text-blue-800"
+                    href="https://www.governor.ny.gov/content/procurement-form"
+                  >
+                    Procurement Form
+                  </a>
                 </p>
               </dd>
             </div>
             <div class="mt-12">
               <dt class="text-lg leading-6 font-medium text-gray-900">
-                Why did the invisible man turn down the job offer?
+                How to sell products to NYS due to shortages of gloves, masks,
+                and gowns
               </dt>
               <dd class="mt-2">
                 <p class="text-base leading-6 text-gray-500">
