@@ -112,14 +112,18 @@ const Faq = () => (
             </div>
             <div class="mt-12">
               <dt class="text-lg leading-6 font-medium text-gray-900">
-                How to sell products to NYS due to shortages of gloves, masks,
-                and gowns
+                Have you recently recovered from COVID-19?
               </dt>
               <dd class="mt-2">
                 <p class="text-base leading-6 text-gray-500">
-                  He couldn't see himself doing it. Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Quas cupiditate laboriosam
-                  fugiat.
+                  New Yorkers who have recovered from COVID are encouraged to
+                  donate blood. Here's{" "}
+                  <a
+                    class="text-purple-500 hover:text-blue-800"
+                    href="https://nybc.org/donate-blood/convalescent-plasma-covid-19-donor-request-form/"
+                  >
+                    information on how to donate
+                  </a>
                 </p>
               </dd>
             </div>
