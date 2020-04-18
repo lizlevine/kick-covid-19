@@ -4,13 +4,22 @@ module.exports = {
   findAll: async (req, res) => {
     db.post
       .find(req.query)
+      .populate("user_id")
       .then((dbPost) => res.json(dbPost))
       .catch((err) => res.status(422).json(err));
   },
   findById: async (req, res) => {
     db.post
       .findById(req.params.id)
-      .populate("answers")
+      // .populate("answers")
+      .populate({
+        path: "answers",
+        model: "Answer",
+        populate: {
+          path: "user",
+          model: "User",
+        },
+      })
       .then((dbPost) => res.json(dbPost))
       .catch((err) => res.status(422).json(err));
   },
