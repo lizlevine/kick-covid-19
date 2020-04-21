@@ -11,9 +11,10 @@ const Card = () => (
       <div className="px-6 py-4 bg-white">
         <div className="font-bold text-xl mb-2 ">Our Mission</div>
         <p className="text-gray-700  text-base">
-          To deliver the facts based on science and data. To provide a forum for
-          all, especially our steadfast health workers and first responders. To
-          share our experience and support others.
+          To provide an open-source platform for anyone across the globe who is
+          affected by the Covid-19 pandemic. Kick-Covid is a space to share
+          experiences, contribute to and support others, and participate in
+          shaping our new world.
         </p>
       </div>
     </div>
@@ -26,9 +27,13 @@ const Card = () => (
       <div className="px-6 py-4 bg-white ">
         <div className="font-bold text-xl mb-2">Vision and Values</div>
         <p className="text-gray-700 text-base">
-          To provide an open-source platform for those effected by the Covid-19
-          pandemic to share their experience and contribute to others. An
-          opportunity to have a say in shaping our new world.
+          <ul>
+            <li>• Transparency</li>
+            <li>• Integrity</li>
+            <li>• Community</li>
+            <li>• Connection</li>
+            <li>• Contribution</li>
+          </ul>
         </p>
       </div>
     </div>
