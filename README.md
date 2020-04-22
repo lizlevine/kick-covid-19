@@ -11,11 +11,11 @@ In a later iteration, our intention is to features blogs and stories from medica
 ##### User arrives at the homepage, clicks on Blog which takes them to a list of posts where they can either create their own post or reply to someone elses.
 
 ![](frontend/kick-covid-19/src/assets/images/number_1.gif)
-![](../../src/assets/images/number_1b.gif)
+![](frontend/kick-covid-19/src/assets/images/number_1b.gif)
 
 ##### Below the Vision, Mission & Values, there is a Twitter feed powered by their API and the CDC's API, User can click on resources and see FAQ's with links to essential services
 
-![](../../src/assets/images/number_2.gif)
+![](frontend/kick-covid-19/src/assets/images/number_2.gif)
 
 ## Languages, Frameworks, Database, Libraries, NPMs
 
