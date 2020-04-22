@@ -13,7 +13,11 @@ In a later iteration, our intention is to features blogs and stories from medica
 ![](frontend/kick-covid-19/src/assets/images/number_1.gif)
 ![](frontend/kick-covid-19/src/assets/images/number_1c.gif)
 
-##### Below the Vision, Mission & Values, there is a Twitter feed powered by their API and the CDC's API, User can click on resources and see FAQ's with links to essential services
+##### Mobile Responsive
+
+![](frontend/kick-covid-19/src/assets/images/mobile_responsive.gif)
+
+##### Twitter feed powered by their API and the CDC's. User resources tab goes to FAQ's page with links to essential services
 
 ![](frontend/kick-covid-19/src/assets/images/number_2.gif)
 
@@ -21,11 +25,12 @@ In a later iteration, our intention is to features blogs and stories from medica
 
 - Javascript
 - React.js
+- CSS3
 - Mongo database
 - Mongoose ODM
 - Express.js server
 - Node.js
-- tailwind css library (via NPM)
+- Tailwind CSS
 - JWT - token based OAuth
 - Formik
 - Axios
