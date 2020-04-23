@@ -61,9 +61,9 @@ const Team = () => (
                 </h3>
                 <p class="mt-3 text-base leading-6 text-gray-500">
                   Liz is a Web Developer with a passion for dreaming up nearly
-                  impossible -to-build apps. She's also the managing director
-                  for a corporate training & consulting firm in NYC and, the
-                  proud mom of an AKC Champion Basenji.
+                  impossible-to-build apps. She's the managing director for a
+                  corporate consulting firm based in NYC and, the proud mom of
+                  an AKC Champion Basenji.
                 </p>
               </a>
             </div>
