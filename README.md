@@ -4,7 +4,7 @@
 
 This mobile responsive, full-stack web application (MERN) provides an open-source platform for those effected by the Covid-19 pandemic to share their experience and contribute to others in a Reddit like format. Anyone can read the posts, but in order to post or reply to posts, the user must register and login.
 
-The Kick-Covid also includes a CDC Twitter feed on the homepage as well as a page dedicated to FAQ with links and resouces including organizations that need volunteers, resources for handling emotional issues and anxiety.
+The Kick-Covid also includes a CDC Twitter feed on the homepage as well as a page dedicated to FAQ with links and resouces including organizations that need volunteers, resources for handling emotional issues, stress and anxiety.
 
 In a later iteration, we'll features blogs and stories from medical professionals, first responders and other front line workers.
 
@@ -24,6 +24,7 @@ In a later iteration, we'll features blogs and stories from medical professional
 - Twitter API
 - CDC API
 - Heroku & mLab deployment
+- Balsamiq (for Wireframing)
 
 ##### User arrives at the homepage, clicks on Blog which takes them to a list of posts where they can either create their own post or reply to someone elses.
 

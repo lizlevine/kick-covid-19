@@ -9,12 +9,11 @@ const Card = () => (
         alt="Sunset in the mountains"
       />
       <div className="px-6 py-4 bg-white">
-        <div className="font-bold text-xl mb-2 ">Our Mission</div>
+        <div className="font-bold text-xl mb-2 ">Our Mission & Vision</div>
         <p className="text-gray-700  text-base">
-          To provide an open-source platform for anyone across the globe who is
-          affected by the Covid-19 pandemic. Kick-Covid is a space to share
-          experiences, contribute to and support others, and participate in
-          shaping our new world.
+          Kick-Covid is an open-source community platform that provides a space
+          for those affected by the pandemic to share their experience,
+          contribute to, and support others.
         </p>
       </div>
     </div>
@@ -25,10 +24,9 @@ const Card = () => (
         alt="Sunset in the mountains"
       />
       <div className="px-6 py-4 bg-white ">
-        <div className="font-bold text-xl mb-2">Vision and Values</div>
+        <div className="font-bold text-xl mb-2">Our Values</div>
         <p className="text-gray-700 text-base">
           <ul>
-            <li>• Transparency</li>
             <li>• Integrity</li>
             <li>• Community</li>
             <li>• Connection</li>
