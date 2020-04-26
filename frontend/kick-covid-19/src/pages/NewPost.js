@@ -17,10 +17,19 @@ class NewPost extends React.Component {
   handleSubmit() {
     const { body } = this.state;
     console.log("fired submit");
+    const token = localStorage.getItem("__kickcovid19_token");
     return axios
-      .post("/api/posts", {
-        body,
-      })
+      .post(
+        "/api/posts",
+        {
+          body,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
         console.log(res);
         window.location.href = "/blog";
