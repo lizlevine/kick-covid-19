@@ -25,7 +25,7 @@ module.exports = {
   },
   create: async (req, res) => {
     db.post
-      .create(req.body)
+      .create({ user_id: req.auth.user.id, ...req.body })
       .then((dbPost) => res.json(dbPost))
       .catch((err) => res.status(422).json(err));
   },

@@ -3,11 +3,15 @@ const mongoose = require("mongoose");
 
 let Schema = mongoose.Schema;
 
-let AnswerSchema = new Schema({
+let AnswerSchema = new Schema(
+  {
     body: String,
     post: { type: Schema.Types.ObjectId, ref: "Post" },
-    user: { type: Schema.Types.ObjectId, ref: "User" }
-}, {timestamps: true});
+    user: { type: Schema.Types.ObjectId, ref: "User" },
+    username: String,
+  },
+  { timestamps: true }
+);
 
 //Needs Further Review
 /*AnswerSchema.methods.toJSONFor = function(user) {

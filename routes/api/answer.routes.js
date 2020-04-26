@@ -1,7 +1,11 @@
 const router = require("express").Router();
 const answerControllers = require("../../controllers/answer.controllers");
+const auth = require("../../utils/auth");
 
-router.route("/").get(answerControllers.findAll).post(answerControllers.create);
+router
+  .route("/")
+  .get(answerControllers.findAll)
+  .post(auth.required, answerControllers.create);
 
 router
   .route("/:id")

@@ -19,7 +19,10 @@ module.exports = {
     const dbPost = await db.post.findById(post);
     // TODO(liz): if the post doesn't exit throw an err
 
-    const dbAnswer = await db.answer.create(req.body);
+    const dbAnswer = await db.answer.create({
+      username: req.auth.user.username,
+      ...req.body,
+    });
     // TODO(liz): if db answer does not exist, throw an error
     dbPost.answers.push(dbAnswer._id);
     await dbPost.save();
