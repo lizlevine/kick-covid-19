@@ -15,39 +15,43 @@ import "./assets/main.css";
 import "./App.css";
 import About from "./pages/About";
 
-const App = () => (
-  <Router>
-    <Header />
-    <div className="page">
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/posts/:id">
-          <Posts />
-        </Route>
-        <Route exact path="/blog">
-          <Blog />
-        </Route>
-        <Route exact path="/resources">
-          <Resources />
-        </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
+const App = () => {
+  const [username, setUsername] = React.useState(0);
 
-        <Route exact path="/signup">
-          <SignUp />
-        </Route>
-        <Route exact path="/newpost">
-          <NewPost />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-      </Switch>
-    </div>
-    <Footer />
-  </Router>
-);
+  return (
+    <Router>
+      <Header refresh={username} />
+      <div className="page">
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/posts/:id">
+            <Posts />
+          </Route>
+          <Route exact path="/blog">
+            <Blog />
+          </Route>
+          <Route exact path="/resources">
+            <Resources />
+          </Route>
+          <Route exact path="/login">
+            <Login refresh={username} setRefresh={setUsername} />
+          </Route>
+
+          <Route exact path="/signup">
+            <SignUp />
+          </Route>
+          <Route exact path="/newpost">
+            <NewPost />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+        </Switch>
+      </div>
+      <Footer />
+    </Router>
+  );
+};
 export default App;

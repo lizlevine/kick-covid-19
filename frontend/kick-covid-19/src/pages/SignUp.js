@@ -1,9 +1,27 @@
 import React from "react";
 import "./style.css";
+import axios from "axios";
 
 function SignUp() {
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [wantsupdates, setWantsUpdates] = React.useState(false);
+
+  const signUp = async () => {
+    // our signup logic
+    const userObject = {
+      username,
+      email,
+      password,
+      wantsupdates,
+    };
+    const data = await axios.post("/auth/signup", userObject);
+    console.log(data);
+  };
+
   return (
-    <form className="w-full max-w-sm">
+    <form className="w-full max-w-sm" onSubmit={() => signUp()}>
       <div className="md:flex md:items-center mb-6">
         <div className="md:w-1/3">
           <label
@@ -20,6 +38,8 @@ function SignUp() {
             id="inline-username"
             type="text"
             placeholder=""
+            onChange={(event) => setEmail(event.target.value)}
+            value={email}
           />
         </div>
       </div>
@@ -38,6 +58,8 @@ function SignUp() {
             id="inline-full-name"
             type="text"
             placeholder=""
+            value={username}
+            onChange={(event) => setUsername(event.target.value)}
           />
         </div>
       </div>
@@ -56,13 +78,20 @@ function SignUp() {
             id="inline-username"
             type="password"
             placeholder=""
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
           />
         </div>
       </div>
       <div className="md:flex md:items-center mb-6">
         <div className="md:w-1/3"></div>
         <label className="md:w-2/3 block text-gray-500 font-bold">
-          <input className="mr-2 leading-tight" type="checkbox" />
+          <input
+            className="mr-2 leading-tight"
+            type="checkbox"
+            onChange={(event) => event.target.checked}
+            value={wantsupdates}
+          />
           <span className="text-sm">I'd like to receive updates</span>
         </label>
       </div>

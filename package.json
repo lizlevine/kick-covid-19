@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "npm run start:prod",
+    "start:backenddev": "nodemon --ignore 'frontend/kick-covid-19/*'",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'frontend/kick-covid-19/*'\" \"npm run client\"",
     "client": "cd frontend/kick-covid-19 && npm run start",

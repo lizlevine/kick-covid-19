@@ -31,7 +31,9 @@ app.get("*", (req, res) => {
 const MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost/kickCovidUsers";
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose
+  .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("DB connected"));
 
 // localhost listening
 app.listen(PORT, function () {

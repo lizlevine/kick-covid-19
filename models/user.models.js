@@ -53,8 +53,7 @@ UserSchema.pre("save", function (next) {
 });
 
 UserSchema.methods.comparePassword = async function (candidatePassword) {
-  return await bcrypt.compare(candidatePassword, this.password
-  );
+  return await bcrypt.compare(candidatePassword, this.password);
 };
 
 UserSchema.methods.generateJWT = function () {
@@ -66,7 +65,7 @@ UserSchema.methods.generateJWT = function () {
     {
       id: this.id,
       username: this.username,
-      exp: parseInt(exp.getTime() / 1000)
+      exp: parseInt(exp.getTime() / 1000),
     },
     process.env.JWT_SECRET
   );
@@ -76,7 +75,7 @@ UserSchema.methods.toAuthJSON = function () {
   return {
     username: this.username,
     email: this.email,
-    token: this.generateJWT()
+    token: this.generateJWT(),
   };
 };
 

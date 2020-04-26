@@ -6,7 +6,7 @@ let Schema = mongoose.Schema;
 let PostSchema = new Schema({
   body: String,
   answers: [{ type: Schema.Types.ObjectId, ref: "Answer" }],
-  user_id: { type: Schema.Types.ObjectId, ref: "User" }
+  user_id: { type: Schema.Types.ObjectId, ref: "User" },
 });
 
 let Post = mongoose.model("Post", PostSchema);
