@@ -23,6 +23,7 @@ function SignUp(props) {
     const data = await axios.post("/auth/signup", userObject);
     console.log(data);
     window.location.href = "/login";
+    return false;
   };
 
   return (
