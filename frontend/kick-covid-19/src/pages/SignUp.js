@@ -1,14 +1,17 @@
 import React from "react";
 import "./style.css";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
-function SignUp() {
+function SignUp(props) {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [wantsupdates, setWantsUpdates] = React.useState(false);
+  const { refresh, setRefresh } = props;
+  let history = useHistory();
 
-  const signUp = async () => {
+  const signUp = async (event) => {
     // our signup logic
     const userObject = {
       username,
@@ -16,12 +19,14 @@ function SignUp() {
       password,
       wantsupdates,
     };
+    event.preventDefault();
     const data = await axios.post("/auth/signup", userObject);
     console.log(data);
+    window.location.href = "/login";
   };
 
   return (
-    <form className="w-full max-w-sm" onSubmit={() => signUp()}>
+    <form className="w-full max-w-sm" onSubmit={(event) => signUp(event)}>
       <div className="md:flex md:items-center mb-6">
         <div className="md:w-1/3">
           <label
