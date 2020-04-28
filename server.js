@@ -28,7 +28,9 @@ if (process.env.NODE_ENV === "production") {
     express.static(path.join(__dirname, "./frontend/kick-covid-19/build"))
   );
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./frontend/kick-covid-19/build"));
+    res.sendFile(
+      path.join(__dirname, "./frontend/kick-covid-19/build/index.html")
+    );
   });
 }
 // If deployed, use the deployed database. Otherwise use the local kickCovidUsers database
