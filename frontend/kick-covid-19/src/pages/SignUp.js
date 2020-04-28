@@ -22,7 +22,7 @@ function SignUp(props) {
     event.preventDefault();
     const data = await axios.post("/auth/signup", userObject);
     console.log(data);
-    window.location.reload(true);
+    window.location.href = "/login";
   };
 
   return (
