@@ -19,14 +19,18 @@ const app = express();
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+
 app.use(require("./routes"));
 app.use(auth.handleErrors);
-app.use(express.static(path.join(__dirname, "./frontend/kick-covid-19/build")));
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./frontend/kick-covid-19/build"));
-});
 
+if (process.env.NODE_ENV === "production") {
+  app.use(
+    express.static(path.join(__dirname, "./frontend/kick-covid-19/build"))
+  );
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./frontend/kick-covid-19/build"));
+  });
+}
 // If deployed, use the deployed database. Otherwise use the local kickCovidUsers database
 const MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost/kickCovidUsers";
