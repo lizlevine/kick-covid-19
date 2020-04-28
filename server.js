@@ -23,7 +23,7 @@ app.use(express.static("public"));
 app.use(require("./routes"));
 app.use(auth.handleErrors);
 app.use(express.static(path.join(__dirname, "./frontend/kick-covid-19/build")));
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "./frontend/kick-covid-19/build"));
 });
 
